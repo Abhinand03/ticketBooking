@@ -19,7 +19,7 @@ function SelectSeat({ title, seats, price, seatSection }) {
   const handleSetSeat = (seat) => {
     setSelectedSeat((prevValue) => {
       if (totalSelectedSeats >= 8 && !prevValue.includes(seat)) {
-        toast.error("You can select a maximum of 7 seats");
+        toast.error("You can select a maximum of 8 seats");
         return prevValue;
       }
 
