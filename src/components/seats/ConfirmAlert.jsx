@@ -1,6 +1,8 @@
 import Box from "@mui/material/Box";
-import React, { useState } from "react";
+import { toast } from "react-toastify";
 import Modal from "@mui/material/Modal";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 
 const style = {
@@ -18,6 +20,17 @@ function ConfirmAlert({ ticket }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const navigate = useNavigate();
+
+  const handleDone = () => {
+    toast.success("Your ticket has been booked");
+    navigate("/");
+    handleClose();
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
+  };
 
   return (
     <div>
@@ -43,14 +56,16 @@ function ConfirmAlert({ ticket }) {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            <p className="text-2xl font-semibold text-green-600">Booking Confirmed</p>
+            <p className="text-2xl font-semibold text-green-600">
+              Booking Confirmed
+            </p>
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             <div className="flex justify-between ">
               <div className="flex flex-col justify-center">
                 <p className="text-lg font-semibold">Officer Duty</p>
                 <div className="text-xs flex gap-4 text-gray-500">
-                  <p className="border px-2 rounded-lg" >U/A</p>
+                  <p className="border px-2 rounded-lg">U/A</p>
                   <p className="border px-2 rounded-lg">Malayalam</p>
                 </div>
                 <p>Kairali sree kozhikode</p>
@@ -74,12 +89,12 @@ function ConfirmAlert({ ticket }) {
                 <p className="text-sm font-semibold">06.00pm</p>
               </div>
               <div>
-              <p className="text-sm text-gray-700">screen</p>
+                <p className="text-sm text-gray-700">screen</p>
                 <p className="text-sm font-semibold">SCREEN-1</p>
               </div>
               <div>
-              <p className="text-sm text-gray-700">BOOKING ID</p>
-              <p className="text-sm font-semibold">0024350</p>
+                <p className="text-sm text-gray-700">BOOKING ID</p>
+                <p className="text-sm font-semibold">0024350</p>
               </div>
             </div>
             <p className="text-sm text-gray-700 mt-2">Seats</p>
@@ -95,7 +110,10 @@ function ConfirmAlert({ ticket }) {
             ))}
             <br />
             <div className="flex justify-end">
-              <button className="bg-blue-600 px-8 py-2 rounded-lg text-white">
+              <button
+                onClick={() => handleDone()}
+                className="bg-blue-600 px-8 py-2 rounded-lg text-white"
+              >
                 done
               </button>
             </div>
