@@ -1,7 +1,18 @@
 import Swipers from "../components/home/Swipers";
 import MoviesCard from "../components/home/MoviesCard";
+import { useMeta } from "../hooks/UseMeta";
 
 function Home() {
+  useMeta({
+    title: ` | MySite`,
+    description: "home3",
+    'og:title': "home3",
+    'og:description': "home3",
+    'og:image': "https://t4.ftcdn.net/jpg/04/39/89/01/360_F_439890152_sYbPxa1ANTSKcZuUsKzRAf9O7bJ1Tx5B.jpg",
+    'twitter:card': 'summary_large_image',
+    'twitter:image':"https://t4.ftcdn.net/jpg/04/39/89/01/360_F_439890152_sYbPxa1ANTSKcZuUsKzRAf9O7bJ1Tx5B.jpg" ,
+  });
+
   return (
     <div>
       <Swipers />
