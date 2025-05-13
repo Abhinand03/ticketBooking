@@ -17,7 +17,7 @@ function App() {
       {routes.map(({ path, element: Element }) => (
           <Route key={path} path={path} element={<Element />} />
         ))}
-        <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Home />} /> */}
         {/* <Route   path="/select-theater" element={<Theaters />} /> */}
         <Route   path="/select-ticket" element={<SelectTicket />} />
       </Route>
