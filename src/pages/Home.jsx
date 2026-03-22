@@ -17,7 +17,7 @@ function Home() {
     <div>
       <Swipers />
       <div className="mt-16">
-        <p className="text-2xl text-center font-bold ">Latest Movies</p>
+        <p className="text-2xl text-center font-bold "> Movies</p>
         <div className="mt-8 flex justify-center  flex-wrap gap-5">
           
           <MoviesCard />
