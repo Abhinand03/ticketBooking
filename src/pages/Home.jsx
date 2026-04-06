@@ -21,9 +21,7 @@ function Home() {
         <div className="mt-8 flex justify-center  flex-wrap gap-5">
           
           <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
+         
         </div>
       </div>
     </div>
